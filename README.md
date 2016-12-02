@@ -29,7 +29,8 @@ http://localhost:8080/BlogApp/blogs?start=3&noOfBlogs=2
     "tags": null,
     "deleted": false
   }
-]```
+]
+```
 
 ###Get Blog by Id:
 **Request**
