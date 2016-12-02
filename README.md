@@ -1,14 +1,16 @@
-# assignments
+## BlogApp
 sudo apt-get install tomcat7
 sudo cp target/BlogApp.war /var/lib/tomcat7/webapps/.
-#Dump database in mysql
+###Dump database in mysql
 Mysql -uroot -p < blog_db.sql
 
-Get list of blogs:- 
-Start<Optional Parameter> - Default value 0 - start offset of result
-NoOfBlogs<optional parameter>- default value is 5 per page.
+###Get list of blogs:- 
+ *Start<Optional Parameter> - Default value 0 - start offset of result
+ *NoOfBlogs<optional parameter>- default value is 5 per page.
+**Request:**
 http://localhost:8080/BlogApp/blogs?start=3&noOfBlogs=2
-[
+**Response**
+```[
   {
     "id": 4,
     "title": "fjsdfkjsdkfsknfjksdnfnsdkfnkjdsnkjfn",
@@ -27,10 +29,13 @@ http://localhost:8080/BlogApp/blogs?start=3&noOfBlogs=2
     "tags": null,
     "deleted": false
   }
-]
+]```
 
-Get Blog by Id:
+###Get Blog by Id:
+**Request**
 http://localhost:8080/BlogApp/blog/20/
+**Response**
+```
 {
   "id": 20,
   "title": "3 para blog final",
@@ -79,16 +84,25 @@ http://localhost:8080/BlogApp/blog/20/
   "tags": null,
   "deleted": false
 }
+```
 
-Add Blog:-
+###Add Blog:-
 http://localhost:8080/BlogApp/addBlog/
-Request Body:-
+**Request Body:-**
+title:- title of the blog
+content:- Paragraphs and comment of the blogs.
+All the paragraphs are separated by \n\n and comments on paragraph are separated by "^^".
+
+```
 {
 "content":"content1 vontgsdfv3q mkjk3 ^^first comment^^second commen\n\n second para is here ^^send para first comment\n\nthird para is here",
 "title":"3 para blog final"
 }
+```
 
-Successresponse:-(Return created object)
+**Successresponse:-(Return created object)**
+
+```
 {
   "id": 21,
   "title": "3 para blog final",
@@ -137,6 +151,6 @@ Successresponse:-(Return created object)
   "tags": null,
   "deleted": false
 }
-
+```
 
 
