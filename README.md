@@ -1,7 +1,15 @@
 ## BlogApp
+
 ###Setup Tomcat server to deploy application
 * sudo apt-get install tomcat7
+
+###Install Maven - used for building project
+* sudo apt-get install maven 
+
+###Deploy project 
+* Go to current project directory
 * sudo cp target/BlogApp.war /var/lib/tomcat7/webapps/.
+
 ###Dump database in mysql
 * Install Mysql dump data in mysql
 Mysql -uroot -p < blog_db.sql
